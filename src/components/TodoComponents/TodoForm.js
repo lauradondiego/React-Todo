@@ -4,7 +4,7 @@ class TodoForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      task: ""
+      item: ""
     };
   }
 
@@ -14,21 +14,24 @@ class TodoForm extends React.Component {
     });
   };
 
-  submitTask = e => {
+  submitItem = e => {
     e.preventDefault();
-    this.props.addTask(this.state.task);
+    this.props.addItem(this.state.item);
   };
 
   render() {
     return (
-      <form onSubmit={this.submitTask}>
+      <form onSubmit={this.submitItem}>
         <input
           type="text"
-          value={this.task}
-          name="task"
+          value={this.item}
+          name="item"
           onChange={this.handleChanges}
         />
-        <button>Add New Task</button>
+        <button>Add</button>
+        <button className="clear-btn" onClick={this.props.clearCompleted}>
+          Clear Completed Todo Item
+        </button>
       </form>
     );
   }

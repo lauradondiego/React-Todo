@@ -1,52 +1,75 @@
 import React from "react";
+
 import TodoForm from "./components/TodoComponents/TodoForm";
-import taskData from "./components/TodoComponents/TodoList";
+import TodoList from "./components/TodoComponents/TodoList";
+
+const todoData = [
+  {
+    name: "Walk Cat",
+    id: 1528817077286,
+    completed: false
+  },
+  {
+    name: "Bake Cookies",
+    id: 1528817084358,
+    completed: false
+  },
+  {
+    name: "Netflix",
+    id: 1528817084358,
+    completed: false
+  },
+  {
+    name: "Max out Credit Card",
+    id: 1528817084358,
+    completed: false
+  }
+];
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       name: "Laura",
-      task: taskData
+      todo: todoData
     };
   }
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
   toggleItem = id => {
-    console.log(id);
     this.setState({
-      task: this.state.task.map(task => {
-        if (task.id === id) {
+      todo: this.state.todo.map(item => {
+        if (item.id === id) {
           return {
             ...item,
             // Same as:
             // name: item.name,
             // id: item.id,
-            // purchased: item.purchased,
-            purchased: !task.purchased
+            // completed: item.completed,
+            completed: !item.completed
           };
         } else {
-          return task;
+          return item;
         }
       })
     });
   };
 
-  addTask = taskName => {
-    const newTask = {
-      name: taskName,
+  addItem = itemName => {
+    const newItem = {
+      name: itemName,
       id: Date.now(),
-      purchased: false
+      completed: false
     };
     this.setState({
-      task: [...this.state.task, newtask]
+      todo: [...this.state.todo, newItem]
     });
   };
 
-  clearPurchased = () => {
+  clearCompleted = () => {
     this.setState({
-      task: this.state.task.filter(task => !task.purchased)
+      todo: this.state.todo.filter(item => !item.completed)
     });
   };
 
@@ -55,13 +78,13 @@ class App extends React.Component {
       <div className="App">
         <div className="Header">
           <h2>My Todo List!</h2>
-          <TodoForm addItem={this.addTask} />
+          <TodoForm
+            addItem={this.addItem}
+            toggleItem={this.toggleItem}
+            clearCompleted={this.clearCompleted}
+          />
         </div>
-        <TodoList
-          taskData={this.state.task}
-          toggleItem={this.toggleTask}
-          clearPurchased={this.clearPurchased}
-        />
+        <TodoList todo={this.state.todo} />
       </div>
     );
   }

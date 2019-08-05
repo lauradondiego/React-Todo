@@ -1,29 +1,20 @@
 import React from "react";
+import Todo from "./Todo";
 
 // your components will all go in this `component` directory.
 // feel free to change this component.js into TodoList.js
 
-const taskData = [
-  {
-    task: "Walk Cat",
-    id: 1528817077286,
-    completed: false
-  },
-  {
-    task: "Bake Cookies",
-    id: 1528817084358,
-    completed: false
-  },
-  {
-    task: "Netflix and Chill",
-    id: 1528817084358,
-    completed: false
-  },
-  {
-    task: "Max out Credit Card",
-    id: 1528817084358,
-    completed: false
-  }
-];
+const TodoList = props => {
+  return (
+    <div className="todo-list">
+      {props.todo.map(item => (
+        <Todo key={item.id} item={item} toggleItem={props.toggleItem} />
+      ))}
+      {/* <button className="clear-btn" onClick={props.clearCompleted}>
+        Clear Completed Todo
+      </button> */}
+    </div>
+  );
+};
 
-export default taskData;
+export default TodoList;
