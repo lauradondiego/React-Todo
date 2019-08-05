@@ -37,7 +37,6 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: "Laura",
       todo: todoData
     };
   }
