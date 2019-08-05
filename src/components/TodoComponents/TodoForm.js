@@ -23,14 +23,15 @@ class TodoForm extends React.Component {
     return (
       <form onSubmit={this.submitItem}>
         <input
+          className="input"
           type="text"
           value={this.item}
           name="item"
           onChange={this.handleChanges}
         />
-        <button>Add</button>
+        <button className="add-btn">Add Todo</button>
         <button className="clear-btn" onClick={this.props.clearCompleted}>
-          Clear Completed Todo Item
+          Clear Completed Todo
         </button>
       </form>
     );

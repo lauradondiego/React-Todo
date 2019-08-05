@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./components/TodoComponents/Todo.css";
+
 import TodoForm from "./components/TodoComponents/TodoForm";
 import TodoList from "./components/TodoComponents/TodoList";
 
@@ -10,18 +12,23 @@ const todoData = [
     completed: false
   },
   {
-    name: "Bake Cookies",
+    name: "Eat Burritos",
     id: 1528817084358,
     completed: false
   },
   {
     name: "Netflix",
-    id: 1528817084358,
+    id: 1528817084359,
     completed: false
   },
   {
     name: "Max out Credit Card",
-    id: 1528817084358,
+    id: 1528817084351,
+    completed: false
+  },
+  {
+    name: "Advanced React",
+    id: 1528817084352,
     completed: false
   }
 ];
@@ -77,14 +84,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="Header">
-          <h2>My Todo List!</h2>
+          <h2>Laura's August To Do List:</h2>
           <TodoForm
             addItem={this.addItem}
-            toggleItem={this.toggleItem}
             clearCompleted={this.clearCompleted}
           />
         </div>
-        <TodoList todo={this.state.todo} />
+        <TodoList todo={this.state.todo} toggleItem={this.toggleItem} />
       </div>
     );
   }
