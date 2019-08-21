@@ -75,7 +75,7 @@ class App extends React.Component {
 
   clearCompleted = () => {
     this.setState({
-      todo: this.state.todo.filter(item => !item.completed)
+      todo: this.state.todo.filter(task => !task.completed)
     });
   };
 
@@ -83,7 +83,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="Header">
-          <h2>Laura's August To Do List:</h2>
+          <h2>Laura's To Do List:</h2>
           <TodoForm
             addItem={this.addItem}
             clearCompleted={this.clearCompleted}
