@@ -5,7 +5,7 @@ body {
   background: url("https://images.unsplash.com/photo-1542789828-6c82d889ed74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80");
   height: 100vh;
   background-repeat: no-repeat;
-  background-size: 1000px 1000px;
+  /* background-size: 1000px 1000px; */
 }
 
 .Header h2 {
