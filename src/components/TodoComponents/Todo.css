@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Lacquer&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC:700&display=swap");
+
+body {
+  background: url("https://images.unsplash.com/photo-1542789828-6c82d889ed74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80");
+  /* height: 100vh;
+  background-repeat: no-repeat; */
+  /* background-size: 1000px 1000px; */
+}
+
+.Header h2 {
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  font-family: "Lacquer", sans-serif;
+  font-size: 32pt;
+}
+
+form {
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+.input {
+  width: 150px;
+}
+
+.clear-btn {
+  background-color: #ff5148;
+}
+.clear-btn:hover {
+  background-color: red;
+}
+
+.add-btn {
+  background: whitesmoke;
+}
+.add-btn:hover {
+  background: seagreen;
+}
+
+.todo-list {
+  text-align: center;
+  border: 2px solid rgb(41, 38, 38);
+  margin-right: 10%;
+  margin-left: 10%;
+  font-family: "Amatic SC", cursive;
+  font-size: 24pt;
+}
+
+.item.completed {
+  color: grey;
+  text-decoration: line-through;
+}
